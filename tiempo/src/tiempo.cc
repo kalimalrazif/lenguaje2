@@ -56,7 +56,7 @@ int Tiempo::getS()
 void Tiempo::addH(int v)
 {
 	if (v < 0) { v=0; }
-	this->h = v;
+	this->h = this->h + v;
 	return;
 }
 
@@ -69,6 +69,8 @@ void Tiempo::addM(int v)
 		int horas = tmp / 60;
 		this->addH (horas);
 		this->m = tmp % 60;
+	} else {
+		this->m = tmp;
 	}
 	return;
 }
@@ -80,15 +82,16 @@ void Tiempo::addS(int v)
 	tmp = v + this->s;
 	if (tmp > 59) {
 		int minutos = tmp / 60;
-		this->addH (minutos);
+		this->addM (minutos);
 		this->s = tmp % 60;
+	} else {
+		this-> s = tmp;
 	}
 	return;
 }
 
-Tiempo::Tiempo()
-{
-	Tiempo(0,0,0);
+Tiempo::Tiempo(): Tiempo(0,0,0) {
+	
 }
 
 Tiempo::Tiempo(int h, int m, int s)
@@ -125,6 +128,10 @@ void Tiempo::delM(int v) {
 		this->m = this->m - tmp;
 		
 	} else {
+		if ((( this->m - v ) < 0) && (this->getH() > 0 )) {
+			this->delH (1);
+			this->m = this->m + 60;
+		} 
 		this->m = this->m - v;
 	}
 	return;
@@ -146,6 +153,10 @@ void Tiempo::delS(int v) {
 		this->s = this->s - tmp;
 		
 	} else {
+		if ((( this->s - v ) < 0) && (this->getM() > 0 )) {
+			this->delM (1);
+			this->s = this->s + 60;
+		} 
 		this->s = this->s - v;
 	}
 	return;

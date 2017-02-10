@@ -18,10 +18,25 @@
  */
 
 #include <iostream>
+#include "tiempo.h"
 
 int main()
 {
-	std::cout << "Hello world!" << std::endl;
+	Tiempo t1 = Tiempo();
+	Tiempo t2 = Tiempo(20,00,40);
+
+	std::cout  << "Horas: " << t1.getH () << " Minutos: " << t1.getM () << " Segundos: " << t1.getS () << std::endl;
+	t1.addM(400);
+	t1.addS(125);
+	t1.addM(18);
+	std::cout  << "Horas: " << t1.getH () << " Minutos: " << t1.getM () << " Segundos: " << t1.getS () << std::endl;
+
+	std::cout  << "Horas: " << t2.getH () << " Minutos: " << t2.getM () << " Segundos: " << t2.getS () << std::endl;	
+	t2.delH(10);
+	t2.delM(30);
+	t2.delS(120);
+	std::cout  << "Horas: " << t2.getH () << " Minutos: " << t2.getM () << " Segundos: " << t2.getS () << std::endl;
 	return 0;
 }
+
 
