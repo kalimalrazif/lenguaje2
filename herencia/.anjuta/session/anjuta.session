@@ -1,0 +1,28 @@
+[Anjuta]
+Geometry=1916x1039+0+18
+
+[File Loader]
+Files=../../src/animal.h#36%%%../../src/animal.cc#27%%%../../src/main.cc#56%%%../../src/oveja.h#22%%%../../src/oveja.cc#21%%%../../src/chupacabras.h#23%%%../../src/chupacabras.cc#21
+
+[Document Manager]
+bookmarks=<?xml version="1.0" encoding="UTF-8"?>\n<bookmarks/>\n
+
+[Execution]
+Program uri=../../Debug/src/herencia
+Run in terminal=2
+Working directories=../../.
+
+[Project Manager]
+Shortcut=herencia//src//herencia
+Expand=herencia%%%herencia//src%%%herencia//src//herencia%%%herencia//dist_doc
+
+[Debugger]
+Stop at beginning=2
+
+[Build]
+Configuration list=1:Default:%%%1:Debug:Debug%%%1:Profiling:Profiling%%%1:Optimized:Optimized%%%1:MinGW32:MinGW32
+Selected Configuration=Debug
+BuildArgs/Default=--enable-maintainer-mode
+BuildArgs/Debug=--enable-maintainer-mode 'CFLAGS=-g -O0' 'CXXFLAGS=-g -O0' 'JFLAGS=-g -O0' 'FFLAGS=-g -O0'
+BuildArgs/Profiling=--enable-maintainer-mode 'CFLAGS=-g -pg' 'CXXFLAGS=-g -pg' 'JFLAGS=-g -pg' 'FFLAGS=-g -pg'
+BuildArgs/Optimized=--enable-maintainer-mode 'CFLAGS=-O2' 'CXXFLAGS=-O2' 'JFLAGS=-O2' 'FFLAGS=-O2'
