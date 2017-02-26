@@ -30,4 +30,5 @@
 
 *~
 */autom4te.cache/*
-.anjuta/*
+*/.anjuta/*
+*/.anjuta*.db
