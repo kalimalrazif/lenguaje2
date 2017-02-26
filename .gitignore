@@ -32,3 +32,4 @@
 */autom4te.cache/*
 */.anjuta/*
 */.anjuta*.db
+*/Debug/*
