@@ -41,16 +41,16 @@ void MiPanel::render(wxDC&  dc)
         dc.DrawLine( x, 0, x, h ); // draw line across the rectangle
     }
     
-    // draw a rectangle
+    /*// draw a rectangle
     dc.SetBrush(*wxBLUE_BRUSH); // blue filling
     dc.SetPen( wxPen( wxColor(255,175,175), 10 ) ); // 10-pixels-thick pink outline
-    dc.DrawRectangle( 300, 100, 400, 200 );
+    dc.DrawRectangle( 300, 100, 400, 200 );*/
  
-    /*int y = 0;
+    int y = 0;
     for (y = 0; y < w; y+=20) {
         dc.SetPen( wxPen( wxColor(0,0,0), 1 ) ); // black line, 3 pixels thick
         dc.DrawLine( 0, y, w, y ); // draw line across the rectangle
-    } */   
+    }   
  
     // Look at the wxDC docs to learn how to draw other stuff
 }

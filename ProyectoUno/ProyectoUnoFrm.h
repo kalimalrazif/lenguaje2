@@ -26,10 +26,9 @@
 //Header Include Start and Header Include End.
 //wxDev-C++ designer will remove them. Add custom headers after the block.
 ////Header Include Start
+#include <wx/toolbar.h>
 #include <wx/timer.h>
 #include <wx/menu.h>
-#include <wx/statusbr.h>
-#include <wx/toolbar.h>
 ////Header Include End
 #include "mipanel.h"
 ////Dialog Style Start
@@ -55,10 +54,9 @@ class ProyectoUnoFrm : public wxFrame
 		//GUI Control Declaration Start and GUI Control Declaration End.
 		//wxDev-C++ will remove them. Add custom code after the block.
 		////GUI Control Declaration Start
+		wxToolBar *WxToolBar1;
 		wxTimer *WxTimer1;
 		wxMenuBar *WxMenuBar1;
-		wxStatusBar *WxStatusBar1;
-		wxToolBar *WxToolBar1;
 		////GUI Control Declaration End
 		MiPanel *panelito;
 	private:
@@ -69,13 +67,12 @@ class ProyectoUnoFrm : public wxFrame
 		enum
 		{
 			////GUI Enum Control ID Start
+			ID_WXTOOLBUTTON1 = 1008,
+			ID_WXTOOLBAR1 = 1007,
 			ID_WXTIMER1 = 1006,
 			ID_MNU_ARCHIVO_1001 = 1001,
 			ID_MNU_SALIR_1002 = 1002,
 			
-			ID_WXSTATUSBAR1 = 1004,
-			ID_INICIARBUTTON = 1005,
-			ID_WXTOOLBAR1 = 1003,
 			////GUI Enum Control ID End
 			ID_MIPANEL_3000 = 3000,
 			ID_DUMMY_VALUE_ //don't remove this value unless you have other enum values

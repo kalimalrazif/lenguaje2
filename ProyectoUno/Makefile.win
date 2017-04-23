@@ -1,7 +1,7 @@
 # Project: ProyectoUno
 # Compiler: Default GCC compiler
 # Compiler Type: MingW 3
-# Makefile created by wxDev-C++ IDE 7.4.2.569 on 21/04/17 16:08
+# Makefile created by wxDev-C++ IDE 7.4.2.569 on 23/04/17 18:18
 
 WXLIBNAME = wxmsw29u
 CPP       = g++.exe
@@ -36,13 +36,13 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(LINK) $(LINKOBJ) -o "$(BIN)" $(LIBS) 
 
-Objects/MingW/ProyectoUnoApp.o: $(GLOBALDEPS) ProyectoUnoApp.cpp
+Objects/MingW/ProyectoUnoApp.o: $(GLOBALDEPS) ProyectoUnoApp.cpp ProyectoUnoApp.h ProyectoUnoFrm.h mipanel.h
 	$(CPP) -c ProyectoUnoApp.cpp -o Objects/MingW/ProyectoUnoApp.o $(CXXFLAGS)
 
-Objects/MingW/ProyectoUnoFrm.o: $(GLOBALDEPS) ProyectoUnoFrm.cpp
+Objects/MingW/ProyectoUnoFrm.o: $(GLOBALDEPS) ProyectoUnoFrm.cpp ProyectoUnoFrm.h mipanel.h Images/ProyectoUnoFrm_WxToolButton1_XPM.xpm
 	$(CPP) -c ProyectoUnoFrm.cpp -o Objects/MingW/ProyectoUnoFrm.o $(CXXFLAGS)
 
-Objects/MingW/mipanel.o: $(GLOBALDEPS) mipanel.cpp
+Objects/MingW/mipanel.o: $(GLOBALDEPS) mipanel.cpp mipanel.h
 	$(CPP) -c mipanel.cpp -o Objects/MingW/mipanel.o $(CXXFLAGS)
 
 Objects/MingW/ProyectoUno_private.res: Objects/MingW/ProyectoUno_private.rc ProyectoUnoApp.rc 

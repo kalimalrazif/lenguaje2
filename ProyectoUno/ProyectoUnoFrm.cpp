@@ -14,7 +14,7 @@
 //Header Include Start and Header Include End
 //wxDev-C++ designer will remove them
 ////Header Include Start
-#include "Images/ProyectoUnoFrm_IniciarButton_XPM.xpm"
+#include "Images/ProyectoUnoFrm_WxToolButton1_XPM.xpm"
 ////Header Include End
 
 //----------------------------------------------------------------------------
@@ -30,7 +30,6 @@ BEGIN_EVENT_TABLE(ProyectoUnoFrm,wxFrame)
 	EVT_CLOSE(ProyectoUnoFrm::OnClose)
 	EVT_TIMER(ID_WXTIMER1,ProyectoUnoFrm::WxTimer1Timer)
 	EVT_MENU(ID_MNU_SALIR_1002, ProyectoUnoFrm::Mnusalir1002Click)
-	EVT_MENU(ID_INICIARBUTTON,ProyectoUnoFrm::IniciarButtonClick)
 END_EVENT_TABLE()
 ////Event Table End
 
@@ -54,19 +53,6 @@ void ProyectoUnoFrm::CreateGUIControls()
 
 	wxInitAllImageHandlers();   //Initialize graphic format handlers
 
-	WxToolBar1 = new wxToolBar(this, ID_WXTOOLBAR1, wxPoint(0, 0), wxSize(624, 29));
-
-	wxBitmap IniciarButton_BITMAP (ProyectoUnoFrm_IniciarButton_XPM);
-	wxBitmap IniciarButton_DISABLE_BITMAP (wxNullBitmap);
-	WxToolBar1->AddTool(ID_INICIARBUTTON, _(""), IniciarButton_BITMAP, IniciarButton_DISABLE_BITMAP, wxITEM_NORMAL, _(""), _(""));
-
-	WxStatusBar1 = new wxStatusBar(this, ID_WXSTATUSBAR1, wxST_SIZEGRIP);
-	WxStatusBar1->SetFieldsCount(1);
-	WxStatusBar1->SetStatusText(_("Bienvenidos"),0);
-	int WxStatusBar1_Widths[1];
-	WxStatusBar1_Widths[0] = -1;
-	WxStatusBar1->SetStatusWidths(1,WxStatusBar1_Widths);
-
 	WxMenuBar1 = new wxMenuBar();
 	wxMenu *ID_MNU_ARCHIVO_1001_Mnu_Obj = new wxMenu();
 	ID_MNU_ARCHIVO_1001_Mnu_Obj->Append(ID_MNU_SALIR_1002, _("&Salir"), _(""), wxITEM_NORMAL);
@@ -76,17 +62,23 @@ void ProyectoUnoFrm::CreateGUIControls()
 	WxTimer1 = new wxTimer();
 	WxTimer1->SetOwner(this, ID_WXTIMER1);
 
-    panelito = new MiPanel(this, ID_MIPANEL_3000,
+	WxToolBar1 = new wxToolBar(this, ID_WXTOOLBAR1, wxPoint(0, 0), wxSize(624, 29));
+
+	wxBitmap WxToolButton1_BITMAP (ProyectoUnoFrm_WxToolButton1_XPM);
+	wxBitmap WxToolButton1_DISABLE_BITMAP (wxNullBitmap);
+	WxToolBar1->AddTool(ID_WXTOOLBUTTON1, _("bla"), WxToolButton1_BITMAP, WxToolButton1_DISABLE_BITMAP, wxITEM_NORMAL, _(""), _(""));
+
 	WxToolBar1->SetToolBitmapSize(wxSize(20,20));
 	WxToolBar1->Realize();
 	SetToolBar(WxToolBar1);
-	SetStatusBar(WxStatusBar1);
 	SetTitle(_("ProyectoUno"));
 	SetIcon(wxNullIcon);
 	SetSize(8,8,640,480);
 	Center();
 	
 	////GUI Items Creation End
+	panelito = new MiPanel(this, ID_MIPANEL_3000,wxPoint(48, 97), wxSize(185, 41));
+	panelito->SetBackgroundColour(wxColour(_("MAROON")));
 }
 
 void ProyectoUnoFrm::OnClose(wxCloseEvent& event)
